@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-inicioo',
@@ -7,9 +8,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class IniciooPage implements OnInit {
 
-  constructor() { }
+  constructor(private router: Router) { }
 
   ngOnInit() {
+  }
+
+  segmentChanged(event : any){
+    console.log(event)
+    let ruta=event.detail.value 
+    this.router.navigate(['inicioo/'+ruta])
   }
 
 }
